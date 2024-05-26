@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "ignorePatterns": ["stories/*"],
+  "rules": {
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true,
+        "enforceForJSX": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-namespace": "off",
+    "@private/app/strict-dependencies": "error"
+  },
+  "plugins": ["@private/app"]
 }
